@@ -4,11 +4,14 @@ author: georgedrummond
 
 <html>
   <head>
-    <title>GifWeekly</title>
+    <title>A free once-weekly email of funny gifs - Gif Weekly</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <style type="text/css" media="screen">
+      #hero-image { width: 100%; }
+    </style>
   </head>
   <body>
-
     <div class="container">
       <br>
       <br>
@@ -16,7 +19,7 @@ author: georgedrummond
       <br>
       <div class="row">
         <div class="col-md-5 col-md-offset-1">
-          <img src="http://media2.giphy.com/media/MS0fQBmGGMaRy/giphy.gif" class="img-responsive img-rounded" />
+          <img id="hero-image" class="img-responsive img-rounded" />
         </div>
         <div class="col-md-4">
           <br>
@@ -38,11 +41,29 @@ author: georgedrummond
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <p class="text-muted">
+            Twitter :tweet:
             &copy; GIF Weekly 2014. All Rights Reserved. :stuck_out_tongue_winking_eye:
           </p>
         </div>
       </div>
       <hr>
     </div>
+
+    <script type="text/javascript" charset="utf-8">
+      var images = ['cat.gif', 'indie.gif', 'excited.gif', 'strange.gif', 'wow.gif'];
+      var image  = images[Math.floor(Math.random()*images.length)];
+      $('#hero-image').attr('src', '/images/'+image);
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-234248-21', 'gifweekly.com');
+      ga('send', 'pageview');
+
+    </script>
   </body>
 </html>
